@@ -36,6 +36,11 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: "Inter", sans-serif;
+    background-image: url('/lovable-uploads/68a36d4c-6548-488d-8d9c-c49305b9e256.png');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: 0 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
