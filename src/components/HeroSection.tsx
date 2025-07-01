@@ -1,170 +1,131 @@
 
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useScreenSize, useUltraWide } from '@/hooks/use-mobile';
-
-const heroSlides = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    title: "Transformamos projetos em realidade",
-    subtitle: "Construção de qualidade com mais de 15 anos de experiência no mercado",
-    cta: "Solicitar Orçamento"
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    title: "Sua casa dos sonhos",
-    subtitle: "Construímos residências modernas e funcionais para toda a família",
-    cta: "Ver Projetos"
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    title: "Obras comerciais de excelência",
-    subtitle: "Edifícios comerciais e industriais com tecnologia de ponta",
-    cta: "Nossos Serviços"
-  }
-];
+import { ArrowRight, Target, Eye, Lightbulb } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const { isMobile, isTablet } = useScreenSize();
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
+  const scrollToContact = () => {
+    const element = document.getElementById('contato');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <section className="relative overflow-hidden h-screen min-h-[600px] max-h-screen w-full" id="hero">
-      {/* Carousel */}
-      <div className="relative h-full">
-        {heroSlides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <div
-              className="h-full bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-            </div>
-          </div>
-        ))}
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-blue-300 rounded-full opacity-15 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-blue-400 rounded-full opacity-10 animate-pulse delay-500"></div>
+      </div>
 
-        {/* Content */}
-        <div className="absolute inset-0 flex items-center justify-center text-center text-white z-10">
-          <div className="container mx-auto">
-            <div className="max-w-4xl mx-auto">
-              <span className={`inline-block rounded-full font-medium bg-yellow-500 text-construction-900 opacity-0 ${
-                isVisible ? 'animate-fadeIn' : ''
-              } ${
-                isMobile 
-                  ? 'py-1.5 px-3 text-xs mb-4' 
-                  : 'py-2 px-4 text-sm mb-6'
-              }`}>
-                Construtora ForteBase
-              </span>
-              <h1 className={`font-bold leading-tight opacity-0 ${
-                isVisible ? 'animate-slideDown' : ''
-              } ${
-                isMobile 
-                  ? 'text-2xl mb-4' 
-                  : 'text-4xl lg:text-5xl xl:text-6xl mb-6'
-              }`}>
-                {heroSlides[currentSlide].title}
-              </h1>
-              <p className={`leading-relaxed mx-auto opacity-0 ${
-                isVisible ? 'animate-slideDown delay-200' : ''
-              } ${
-                isMobile 
-                  ? 'text-base mb-6 max-w-lg' 
-                  : 'text-xl mb-8 max-w-2xl'
-              }`}>
-                {heroSlides[currentSlide].subtitle}
-              </p>
-              <div className={`flex justify-center opacity-0 ${
-                isVisible ? 'animate-slideDown delay-300' : ''
-              } ${
-                isMobile 
-                  ? 'flex-col gap-3' 
-                  : 'flex-col sm:flex-row gap-4'
-              }`}>
-                <Link to="/contact" className="button-accent group px-6 py-3">
-                  {heroSlides[currentSlide].cta}
-                  <ArrowRight className="inline-block ml-2 transition-transform group-hover:translate-x-1 w-4 h-4 sm:w-5 sm:h-5" />
-                </Link>
-                <Link to="/services" className="button-secondary px-6 py-3">
-                  Nossos serviços
-                </Link>
+      <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content Column */}
+            <div className="text-center lg:text-left">
+              <div className={`opacity-0 ${isVisible ? 'animate-fadeIn' : ''}`}>
+                <span className="inline-block py-2 px-4 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-6">
+                  Consultoria Empresarial Especializada
+                </span>
+                
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight font-display">
+                  <span className="text-blue-600">Clareza</span> e{' '}
+                  <span className="text-blue-600">soluções</span> para o dia a dia dos{' '}
+                  <span className="text-blue-600">empresários</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                  Unimos conhecimento técnico e experiência prática para entregar resultados reais. 
+                  Nossa atuação é marcada por comprometimento, qualidade e foco em resultados.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                  <Button 
+                    onClick={scrollToContact}
+                    size="lg" 
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full transition-all hover:scale-105"
+                  >
+                    Fale Conosco
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  
+                  <a 
+                    href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-full transition-all hover:scale-105"
+                    >
+                      WhatsApp
+                    </Button>
+                  </a>
+                </div>
+              </div>
+
+              {/* Mission, Vision, Values */}
+              <div className={`grid md:grid-cols-3 gap-6 opacity-0 ${isVisible ? 'animate-fadeIn delay-500' : ''}`}>
+                <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-blue-100">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Target className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2 font-display">Missão</h3>
+                  <p className="text-sm text-gray-600">
+                    Contribuir para a tomada de decisão oferecendo clareza e soluções práticas
+                  </p>
+                </div>
+                
+                <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-blue-100">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Eye className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2 font-display">Visão</h3>
+                  <p className="text-sm text-gray-600">
+                    Ser referência em Consultoria Empresarial promovendo crescimento sustentável
+                  </p>
+                </div>
+                
+                <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-blue-100">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Lightbulb className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2 font-display">Valores</h3>
+                  <p className="text-sm text-gray-600">
+                    Comprometimento, qualidade e foco em resultados práticos
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image Column */}
+            <div className={`flex justify-center lg:justify-end opacity-0 ${isVisible ? 'animate-fadeIn delay-300' : ''}`}>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-20 blur-2xl"></div>
+                <img 
+                  src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" 
+                  alt="Juliane Teixeira Consultoria Empresarial - Logo" 
+                  className="relative z-10 max-w-sm w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          className={`absolute top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-all z-20 ${
-            isMobile 
-              ? 'left-2 w-10 h-10' 
-              : 'left-4 w-12 h-12'
-          }`}
-          aria-label="Slide anterior"
-        >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className={`absolute top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-all z-20 ${
-            isMobile 
-              ? 'right-2 w-10 h-10' 
-              : 'right-4 w-12 h-12'
-          }`}
-          aria-label="Próximo slide"
-        >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-
-        {/* Dots Indicator */}
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`rounded-full transition-all ${
-                index === currentSlide 
-                  ? 'bg-yellow-500 w-6 sm:w-8 h-2 sm:h-3'
-                  : 'bg-white bg-opacity-50 w-2 h-2 sm:w-3 sm:h-3'
-              }`}
-              aria-label={`Ir para slide ${index + 1}`}
-            />
-          ))}
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-blue-400 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
     </section>

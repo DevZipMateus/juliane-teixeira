@@ -1,15 +1,13 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Mail, Phone, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useMobile } from '@/hooks/use-mobile';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('inicio');
   const isMobile = useMobile();
-  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +17,7 @@ const Header = () => {
         setIsScrolled(false);
       }
       
-      const sections = ['hero', 'services', 'about', 'team', 'projects', 'testimonials', 'contact'];
+      const sections = ['inicio', 'sobre', 'servicos', 'depoimentos', 'localizacao', 'contato'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -39,93 +37,79 @@ const Header = () => {
     };
   }, []);
   
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
-  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
-  const sectionToNavMap = {
-    'hero': '/',
-    'services': '/services',
-    'about': '/about',
-    'contact': '/contact'
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
   };
   
-  const getLinkColor = (path) => {
-    if (location.pathname !== '/') {
-      return location.pathname === path ? 'text-yellow-500' : `${isScrolled ? 'text-construction-700' : 'text-white'} hover:text-yellow-400`;
-    }
-    
-    const currentSection = Object.entries(sectionToNavMap).find(([_, navPath]) => navPath === path)?.[0];
-    
-    if (currentSection === activeSection) {
-      if (activeSection === 'services') return 'text-yellow-500';
-      if (activeSection === 'about') return 'text-yellow-500';
-      if (activeSection === 'contact') return 'text-yellow-500';
-      return 'text-yellow-500';
-    }
-    
-    return `${isScrolled ? 'text-construction-700' : 'text-white'} hover:text-yellow-400`;
-  };
-  
-  const getMenuButtonColor = () => {
-    return isScrolled ? 'text-construction-700' : 'text-white';
+  const getLinkColor = (section: string) => {
+    return activeSection === section 
+      ? 'text-blue-600' 
+      : `${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-blue-500`;
   };
   
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-4'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-4'
+    }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center shadow-md">
-              <span className="text-construction-900 font-bold text-lg">FB</span>
+          <button 
+            onClick={() => scrollToSection('inicio')}
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+          >
+            <img 
+              src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" 
+              alt="Juliane Teixeira Consultoria" 
+              className="h-12 w-auto"
+            />
+            <div className="hidden sm:block">
+              <h1 className={`text-xl font-bold font-display ${
+                isScrolled ? 'text-gray-800' : 'text-white'
+              }`}>
+                Juliane Teixeira
+              </h1>
+              <p className={`text-sm ${
+                isScrolled ? 'text-blue-600' : 'text-blue-200'
+              }`}>
+                Consultoria Empresarial
+              </p>
             </div>
-            <div>
-              <span className="text-xl font-bold text-yellow-500">Construtora</span>
-              <span className={`text-xl font-bold ml-1 ${isScrolled ? 'text-construction-800' : 'text-yellow-400'}`}>ForteBase</span>
-            </div>
-          </Link>
+          </button>
           
           <nav className="hidden md:block">
-            <ul className="flex space-x-6">
-              <li>
-                <Link to="/" className={`text-sm font-medium ${getLinkColor('/')} transition-colors duration-300`}>
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className={`text-sm font-medium ${getLinkColor('/about')} transition-colors duration-300`}>
-                  Sobre
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className={`text-sm font-medium ${getLinkColor('/services')} transition-colors duration-300`}>
-                  Serviços
-                </Link>
-              </li>
-              <li>
-                <a href="#projects" className={`text-sm font-medium ${isScrolled ? 'text-construction-700' : 'text-white'} hover:text-yellow-400 transition-colors duration-300`}>
-                  Projetos
-                </a>
-              </li>
-              <li>
-                <a href="#testimonials" className={`text-sm font-medium ${isScrolled ? 'text-construction-700' : 'text-white'} hover:text-yellow-400 transition-colors duration-300`}>
-                  Depoimentos
-                </a>
-              </li>
-              <li>
-                <Link to="/contact" className={`text-sm font-medium ${getLinkColor('/contact')} transition-colors duration-300`}>
-                  Contato
-                </Link>
-              </li>
+            <ul className="flex space-x-8">
+              {[
+                { id: 'inicio', label: 'Início' },
+                { id: 'sobre', label: 'Sobre' },
+                { id: 'servicos', label: 'Serviços' },
+                { id: 'depoimentos', label: 'Depoimentos' },
+                { id: 'localizacao', label: 'Localização' },
+                { id: 'contato', label: 'Contato' }
+              ].map(({ id, label }) => (
+                <li key={id}>
+                  <button
+                    onClick={() => scrollToSection(id)}
+                    className={`text-sm font-medium transition-colors duration-300 ${getLinkColor(id)}`}
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </nav>
           
           <button 
-            className={`block md:hidden ${getMenuButtonColor()} hover:text-yellow-400 transition-colors`} 
+            className={`block md:hidden transition-colors ${
+              isScrolled ? 'text-gray-700' : 'text-white'
+            } hover:text-blue-500`}
             onClick={toggleMenu} 
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
@@ -139,74 +123,29 @@ const Header = () => {
           <div className="container mx-auto px-4">
             <nav>
               <ul className="flex flex-col space-y-4">
-                <li>
-                  <Link to="/" className="text-lg font-medium text-construction-700 hover:text-yellow-500 block py-2 transition-colors">
-                    Início
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="text-lg font-medium text-construction-700 hover:text-yellow-500 block py-2 transition-colors">
-                    Sobre
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services" className="text-lg font-medium text-construction-700 hover:text-yellow-500 block py-2 transition-colors">
-                    Serviços
-                  </Link>
-                </li>
-                <li>
-                  <a href="#projects" className="text-lg font-medium text-construction-700 hover:text-yellow-500 block py-2 transition-colors">
-                    Projetos
-                  </a>
-                </li>
-                <li>
-                  <a href="#testimonials" className="text-lg font-medium text-construction-700 hover:text-yellow-500 block py-2 transition-colors">
-                    Depoimentos
-                  </a>
-                </li>
-                <li>
-                  <Link to="/contact" className="text-lg font-medium text-construction-700 hover:text-yellow-500 block py-2 transition-colors">
-                    Contato
-                  </Link>
-                </li>
+                {[
+                  { id: 'inicio', label: 'Início' },
+                  { id: 'sobre', label: 'Sobre' },
+                  { id: 'servicos', label: 'Serviços' },
+                  { id: 'depoimentos', label: 'Depoimentos' },
+                  { id: 'localizacao', label: 'Localização' },
+                  { id: 'contato', label: 'Contato' }
+                ].map(({ id, label }) => (
+                  <li key={id}>
+                    <button
+                      onClick={() => scrollToSection(id)}
+                      className="text-lg font-medium text-gray-700 hover:text-blue-600 block py-2 transition-colors w-full text-left"
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </nav>
             
-            <div className="mt-8 border-t border-gray-100 pt-6">
-              <h3 className="text-sm font-semibold text-construction-600 mb-4">Contato</h3>
-              <div className="flex flex-col space-y-3">
-                <a href="mailto:contato@construtorafortebase.com.br" className="flex items-center text-construction-700 hover:text-yellow-500 transition-colors">
-                  <Mail className="w-4 h-4 mr-2 text-yellow-500" />
-                  contato@construtorafortebase.com.br
-                </a>
-                <a href="tel:+5511999999999" className="flex items-center text-construction-700 hover:text-yellow-500 transition-colors">
-                  <Phone className="w-4 h-4 mr-2 text-yellow-500" />
-                  (11) 99999-9999
-                </a>
-              </div>
-            </div>
-            
-            <div className="mt-6">
-              <h3 className="text-sm font-semibold text-construction-600 mb-4">Siga-nos</h3>
-              <div className="flex space-x-3">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 hover:bg-yellow-200 transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 hover:bg-yellow-200 transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 hover:bg-yellow-200 transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 hover:bg-yellow-200 transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-            
             <button 
               onClick={toggleMenu} 
-              className="absolute top-4 right-4 p-2 rounded-full bg-yellow-100 text-yellow-600 hover:bg-yellow-200 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
               aria-label="Fechar menu"
             >
               <X className="w-6 h-6" />

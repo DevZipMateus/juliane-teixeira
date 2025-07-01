@@ -1,344 +1,237 @@
 
-import { Phone, Mail, MapPin } from 'lucide-react';
-import { useScreenSize, useUltraWide } from '@/hooks/use-mobile';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent } from '@/components/ui/card';
+import { Mail, Phone, Send, CheckCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactForm = () => {
-  const { isMobile, isTablet } = useScreenSize();
-  const { needsSpecialLayout } = useUltraWide();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simular envio do formulário
+    setTimeout(() => {
+      toast({
+        title: "Mensagem enviada com sucesso!",
+        description: "Entraremos em contato em breve. Obrigado!",
+      });
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: ''
+      });
+      setIsSubmitting(false);
+    }, 2000);
+  };
 
   return (
-    <section className="section-padding bg-white" id="contact">
-      <div className="container mx-auto responsive-padding">
-        <div className={`text-center mx-auto ultra-wide-spacing ${
-          needsSpecialLayout ? 'max-w-5xl mb-16' : 'max-w-3xl mb-12'
-        }`}>
-          <span className={`inline-block py-1.5 px-3 sm:py-2 sm:px-4 rounded-full font-medium bg-yellow-500 text-construction-900 mb-3 sm:mb-4 ${
-            needsSpecialLayout ? 'text-lg py-3 px-6' : 'text-xs sm:text-sm'
-          }`}>
-            Contato
-          </span>
-          <h2 className={`font-bold text-construction-800 tracking-tight ultra-wide-spacing ${
-            isMobile 
-              ? 'text-xl mb-3' 
-              : isTablet 
-                ? 'text-2xl mb-4'
-                : needsSpecialLayout
-                  ? 'text-5xl xl:text-6xl mb-8'
-                  : 'text-3xl lg:text-4xl mb-6'
-          }`}>
-            Vamos construir seu projeto juntos
-          </h2>
-          <p className={`text-construction-600 max-w-3xl px-2 sm:px-0 ${
-            isMobile 
-              ? 'text-sm' 
-              : isTablet 
-                ? 'text-base'
-                : needsSpecialLayout
-                  ? 'text-xl xl:text-2xl'
-                  : 'text-base lg:text-lg'
-          }`}>
-            Entre em contato conosco para solicitar um orçamento gratuito ou tirar suas dúvidas.
-            Nossa equipe está pronta para atender você.
-          </p>
-        </div>
+    <section className="py-20 bg-gradient-to-b from-white to-blue-50" id="contato">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block py-2 px-4 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
+              Contato
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight font-display">
+              Vamos conversar sobre seu <span className="text-blue-600">negócio</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              Estamos prontos para ajudar sua empresa a crescer. Entre em contato conosco 
+              e descobra como nossa consultoria pode fazer a diferença.
+            </p>
+          </div>
 
-        <div className={needsSpecialLayout ? 'max-w-6xl mx-auto' : 'max-w-4xl mx-auto'}>
-          <div className={`glass-card rounded-lg sm:rounded-xl animate-slideInRight ${
-            needsSpecialLayout ? 'p-12' : 'p-3 sm:p-4 md:p-6 lg:p-8'
-          }`}>
-            <h3 className={`font-bold text-construction-900 text-center ultra-wide-spacing ${
-              isMobile 
-                ? 'text-lg mb-4' 
-                : needsSpecialLayout
-                  ? 'text-3xl mb-8'
-                  : 'text-lg sm:text-xl md:text-2xl mb-6'
-            }`}>
-              Nossos Canais de Atendimento
-            </h3>
-            
-            <div className={`grid responsive-gap ultra-wide-spacing ${
-              isMobile 
-                ? 'grid-cols-1' 
-                : isTablet 
-                  ? 'grid-cols-2' 
-                  : needsSpecialLayout
-                    ? 'grid-cols-3 gap-12'
-                    : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
-            }`}>
-              <div className="text-center">
-                <div className={`rounded-full bg-blue-100 flex items-center justify-center mx-auto ultra-wide-spacing ${
-                  isMobile 
-                    ? 'w-10 h-10 mb-2' 
-                    : needsSpecialLayout
-                      ? 'w-20 h-20 mb-6'
-                      : 'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 md:mb-4'
-                }`}>
-                  <Phone className={`text-blue-600 ${
-                    isMobile 
-                      ? 'w-4 h-4' 
-                      : needsSpecialLayout
-                        ? 'w-10 h-10'
-                        : 'w-5 h-5 sm:w-6 sm:h-6'
-                  }`} />
-                </div>
-                <h4 className={`font-semibold text-construction-900 ultra-wide-spacing ${
-                  isMobile 
-                    ? 'text-base mb-1' 
-                    : needsSpecialLayout
-                      ? 'text-2xl mb-4'
-                      : 'text-base sm:text-lg md:text-xl mb-2'
-                }`}>
-                  Telefone
-                </h4>
-                <p className={`text-construction-600 ${
-                  isMobile 
-                    ? 'text-sm' 
-                    : needsSpecialLayout
-                      ? 'text-lg'
-                      : 'text-sm sm:text-base'
-                }`}>
-                  (11) 99999-9999
-                </p>
-                <p className={`text-construction-600 ${
-                  isMobile 
-                    ? 'text-sm' 
-                    : needsSpecialLayout
-                      ? 'text-lg'
-                      : 'text-sm sm:text-base'
-                }`}>
-                  (11) 3456-7890
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className={`rounded-full bg-blue-100 flex items-center justify-center mx-auto ultra-wide-spacing ${
-                  isMobile 
-                    ? 'w-10 h-10 mb-2' 
-                    : needsSpecialLayout
-                      ? 'w-20 h-20 mb-6'
-                      : 'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 md:mb-4'
-                }`}>
-                  <Mail className={`text-blue-600 ${
-                    isMobile 
-                      ? 'w-4 h-4' 
-                      : needsSpecialLayout
-                        ? 'w-10 h-10'
-                        : 'w-5 h-5 sm:w-6 sm:h-6'
-                  }`} />
-                </div>
-                <h4 className={`font-semibold text-construction-900 ultra-wide-spacing ${
-                  isMobile 
-                    ? 'text-base mb-1' 
-                    : needsSpecialLayout
-                      ? 'text-2xl mb-4'
-                      : 'text-base sm:text-lg md:text-xl mb-2'
-                }`}>
-                  E-mail
-                </h4>
-                <p className={`text-construction-600 break-all ${
-                  isMobile 
-                    ? 'text-xs' 
-                    : needsSpecialLayout
-                      ? 'text-base'
-                      : 'text-xs sm:text-sm md:text-base'
-                }`}>
-                  contato@construtorafortebase.com.br
-                </p>
-                <p className={`text-construction-600 break-all ${
-                  isMobile 
-                    ? 'text-xs' 
-                    : needsSpecialLayout
-                      ? 'text-base'
-                      : 'text-xs sm:text-sm md:text-base'
-                }`}>
-                  orcamento@construtorafortebase.com.br
-                </p>
-              </div>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <Card className="border-gray-100 shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 font-display">Envie sua mensagem</h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        Nome *
+                      </label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Seu nome completo"
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        E-mail *
+                      </label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="seu@email.com"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
 
-              <div className={`text-center ${
-                isMobile ? '' : isTablet ? 'col-span-2' : 'sm:col-span-2 lg:col-span-1'
-              }`}>
-                <div className={`rounded-full bg-blue-100 flex items-center justify-center mx-auto ultra-wide-spacing ${
-                  isMobile 
-                    ? 'w-10 h-10 mb-2' 
-                    : needsSpecialLayout
-                      ? 'w-20 h-20 mb-6'
-                      : 'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 md:mb-4'
-                }`}>
-                  <MapPin className={`text-blue-600 ${
-                    isMobile 
-                      ? 'w-4 h-4' 
-                      : needsSpecialLayout
-                        ? 'w-10 h-10'
-                        : 'w-5 h-5 sm:w-6 sm:h-6'
-                  }`} />
-                </div>
-                <h4 className={`font-semibold text-construction-900 ultra-wide-spacing ${
-                  isMobile 
-                    ? 'text-base mb-1' 
-                    : needsSpecialLayout
-                      ? 'text-2xl mb-4'
-                      : 'text-base sm:text-lg md:text-xl mb-2'
-                }`}>
-                  Endereço
-                </h4>
-                <p className={`text-construction-600 ${
-                  isMobile 
-                    ? 'text-sm' 
-                    : needsSpecialLayout
-                      ? 'text-lg'
-                      : 'text-sm sm:text-base'
-                }`}>
-                  Av. Construção, 1000
-                </p>
-                <p className={`text-construction-600 ${
-                  isMobile 
-                    ? 'text-sm' 
-                    : needsSpecialLayout
-                      ? 'text-lg'
-                      : 'text-sm sm:text-base'
-                }`}>
-                  São Paulo - SP
-                </p>
-              </div>
-            </div>
-            
-            <div className={`text-center border-t border-construction-200 ${
-              needsSpecialLayout ? 'pt-12 mt-12' : 'pt-4 sm:pt-6 lg:pt-8 mt-4 sm:mt-6 lg:mt-8'
-            }`}>
-              <div className={`rounded-full bg-green-500 flex items-center justify-center mx-auto ultra-wide-spacing ${
-                isMobile 
-                  ? 'w-10 h-10 mb-2' 
-                  : needsSpecialLayout
-                    ? 'w-20 h-20 mb-6'
-                    : 'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 md:mb-4'
-              }`}>
-                <img 
-                  src="/lovable-uploads/db774a34-6e4e-4b59-8c0f-b48860054798.png" 
-                  alt="WhatsApp" 
-                  className={
-                    isMobile 
-                      ? 'w-5 h-5' 
-                      : needsSpecialLayout
-                        ? 'w-10 h-10'
-                        : 'w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8'
-                  } 
-                />
-              </div>
-              <h4 className={`font-semibold text-construction-900 ultra-wide-spacing ${
-                isMobile 
-                  ? 'text-base mb-1' 
-                  : needsSpecialLayout
-                    ? 'text-2xl mb-4'
-                    : 'text-base sm:text-lg md:text-xl mb-2'
-              }`}>
-                WhatsApp
-              </h4>
-              <p className={`text-construction-600 ultra-wide-spacing ${
-                isMobile 
-                  ? 'text-sm mb-1' 
-                  : needsSpecialLayout
-                    ? 'text-lg mb-4'
-                    : 'text-sm sm:text-base mb-2'
-              }`}>
-                (11) 99999-9999
-              </p>
-              <p className={`text-construction-600 ultra-wide-spacing ${
-                isMobile 
-                  ? 'text-xs mb-3' 
-                  : needsSpecialLayout
-                    ? 'text-base mb-6'
-                    : 'text-xs sm:text-sm md:text-base mb-4'
-              }`}>
-                Atendimento rápido para orçamentos e dúvidas
-              </p>
-              <a 
-                href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={`button-accent inline-flex items-center justify-center ${
-                  isMobile 
-                    ? 'text-xs px-3 py-2' 
-                    : needsSpecialLayout
-                      ? 'text-xl px-12 py-6'
-                      : 'text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-2 sm:py-3'
-                }`}
-              >
-                <img 
-                  src="/lovable-uploads/db774a34-6e4e-4b59-8c0f-b48860054798.png" 
-                  alt="WhatsApp" 
-                  className={`mr-1 sm:mr-2 ${
-                    isMobile 
-                      ? 'w-3 h-3' 
-                      : needsSpecialLayout
-                        ? 'w-6 h-6'
-                        : 'w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5'
-                  }`} 
-                />
-                {isMobile ? 'Orçamento pelo WhatsApp' : 'Solicitar Orçamento pelo WhatsApp'}
-              </a>
-            </div>
-            
-            <div className={`bg-construction-50 rounded-lg border border-construction-200 ${
-              needsSpecialLayout ? 'mt-12 p-8' : 'mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 md:p-6'
-            }`}>
-              <h4 className={`font-semibold text-construction-900 text-center ultra-wide-spacing ${
-                isMobile 
-                  ? 'text-base mb-2' 
-                  : needsSpecialLayout
-                    ? 'text-2xl mb-6'
-                    : 'text-base sm:text-lg md:text-xl mb-3'
-              }`}>
-                Horário de Atendimento
-              </h4>
-              <div className={`grid text-center responsive-gap ${
-                isMobile 
-                  ? 'grid-cols-1' 
-                  : needsSpecialLayout
-                    ? 'grid-cols-2 gap-8'
-                    : 'grid-cols-1 sm:grid-cols-2'
-              }`}>
-                <div>
-                  <p className={`font-medium text-construction-800 ${
-                    isMobile 
-                      ? 'text-sm' 
-                      : needsSpecialLayout
-                        ? 'text-xl'
-                        : 'text-sm sm:text-base'
-                  }`}>
-                    Segunda a Sexta
-                  </p>
-                  <p className={`text-construction-600 ${
-                    isMobile 
-                      ? 'text-sm' 
-                      : needsSpecialLayout
-                        ? 'text-lg'
-                        : 'text-sm sm:text-base'
-                  }`}>
-                    08:00 às 18:00
-                  </p>
-                </div>
-                <div>
-                  <p className={`font-medium text-construction-800 ${
-                    isMobile 
-                      ? 'text-sm' 
-                      : needsSpecialLayout
-                        ? 'text-xl'
-                        : 'text-sm sm:text-base'
-                  }`}>
-                    Sábados
-                  </p>
-                  <p className={`text-construction-600 ${
-                    isMobile 
-                      ? 'text-sm' 
-                      : needsSpecialLayout
-                        ? 'text-lg'
-                        : 'text-sm sm:text-base'
-                  }`}>
-                    08:00 às 12:00
-                  </p>
-                </div>
-              </div>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        Telefone
+                      </label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="(00) 00000-0000"
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                        Empresa
+                      </label>
+                      <Input
+                        id="company"
+                        name="company"
+                        type="text"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        placeholder="Nome da sua empresa"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      Mensagem *
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      required
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Conte-nos sobre seu projeto ou necessidade..."
+                      rows={6}
+                      className="w-full"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-full transition-all hover:scale-105"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        Enviar Mensagem
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <Card className="border-gray-100 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                      <Phone className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-2 font-display">Telefone & WhatsApp</h4>
+                      <p className="text-gray-600 mb-2">+55 54 9640-3759</p>
+                      <a 
+                        href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 font-medium"
+                      >
+                        Enviar mensagem →
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-gray-100 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mr-4 flex-shrink-0">
+                      <Mail className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-2 font-display">E-mail</h4>
+                      <p className="text-gray-600 mb-2">contato@julianeteixeira.com.br</p>
+                      <a 
+                        href="mailto:contato@julianeteixeira.com.br"
+                        className="text-blue-600 hover:text-blue-700 font-medium"
+                      >
+                        Enviar e-mail →
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-blue-600 to-blue-700 text-white border-0">
+                <CardContent className="p-8">
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 rounded-xl bg-white bg-opacity-20 flex items-center justify-center mr-4 flex-shrink-0">
+                      <CheckCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-2 font-display">Compromisso com Resultados</h4>
+                      <p className="text-blue-100 leading-relaxed">
+                        Nossa consultoria é focada em entregar soluções práticas e resultados reais 
+                        para o crescimento sustentável do seu negócio.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

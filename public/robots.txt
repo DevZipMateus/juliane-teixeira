@@ -1,0 +1,10 @@
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /api/
+
+Sitemap: https://julianeteixeira.com.br/sitemap.xml
