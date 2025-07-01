@@ -26,7 +26,7 @@ const FloatingButton = () => {
               href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center text-gray-700 hover:text-blue-600 transition-colors p-2 rounded-lg hover:bg-blue-50"
+              className="flex items-center text-gray-700 hover:text-brand-primary transition-colors p-2 rounded-lg hover:bg-brand-primary/5"
             >
               <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3">
                 <Phone className="w-5 h-5 text-white" />
@@ -39,9 +39,9 @@ const FloatingButton = () => {
             
             <button 
               onClick={scrollToContact}
-              className="flex items-center text-gray-700 hover:text-blue-600 transition-colors p-2 rounded-lg hover:bg-blue-50"
+              className="flex items-center text-gray-700 hover:text-brand-primary transition-colors p-2 rounded-lg hover:bg-brand-primary/5"
             >
-              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center mr-3">
+              <div className="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center mr-3">
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -56,10 +56,10 @@ const FloatingButton = () => {
       <button
         onClick={toggleOpen}
         className={`w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 ${
-          isOpen ? 'bg-gray-600 rotate-45' : 'bg-blue-600 hover:bg-blue-700 animate-pulse hover:animate-none'
+          isOpen ? 'bg-gray-600 rotate-45' : 'bg-brand-primary hover:bg-brand-dark animate-pulse hover:animate-none'
         }`}
         style={{
-          boxShadow: isOpen ? 'none' : '0 4px 20px rgba(59, 130, 246, 0.4)',
+          boxShadow: isOpen ? 'none' : '0 4px 20px rgba(81, 150, 217, 0.4)',
         }}
         aria-label={isOpen ? "Fechar menu de contato" : "Abrir menu de contato"}
       >
