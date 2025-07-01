@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,10 +36,26 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: "Inter", sans-serif;
     background-image: url('/lovable-uploads/68a36d4c-6548-488d-8d9c-c49305b9e256.png');
-    background-size: 200px 200px;
+    background-size: 150px 150px;
     background-repeat: repeat;
     background-attachment: fixed;
     background-position: 0 0;
+    background-opacity: 0.05;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/lovable-uploads/68a36d4c-6548-488d-8d9c-c49305b9e256.png');
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
   }
 
   h1, h2, h3, h4, h5, h6 {

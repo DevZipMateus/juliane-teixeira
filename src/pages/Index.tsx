@@ -28,7 +28,7 @@ const Index = () => {
         <meta name="twitter:image" content="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
         <link rel="canonical" href="https://julianeteixeira.com.br" />
       </Helmet>
-      <div className="min-h-screen bg-white w-full overflow-x-hidden">
+      <div className="min-h-screen w-full overflow-x-hidden">
         <Header />
         <main className="w-full">
           <section id="inicio" className="w-full">
