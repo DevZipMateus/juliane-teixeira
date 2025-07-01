@@ -1,24 +1,20 @@
-
 import { ArrowRight, Target, Eye, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
-
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   const scrollToContact = () => {
     const element = document.getElementById('contato');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
@@ -48,25 +44,13 @@ const HeroSection = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                  <Button 
-                    onClick={scrollToContact}
-                    size="lg" 
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full transition-all hover:scale-105"
-                  >
+                  <Button onClick={scrollToContact} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full transition-all hover:scale-105">
                     Fale Conosco
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   
-                  <a 
-                    href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
-                      className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg rounded-full transition-all hover:scale-105"
-                    >
+                  <a href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 px-8 py-4 text-lg rounded-full transition-all hover:scale-105 bg-zinc-100">
                       WhatsApp
                     </Button>
                   </a>
@@ -111,11 +95,7 @@ const HeroSection = () => {
             <div className={`flex justify-center lg:justify-end opacity-0 ${isVisible ? 'animate-fadeIn delay-300' : ''}`}>
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-20 blur-2xl"></div>
-                <img 
-                  src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" 
-                  alt="Juliane Teixeira Consultoria Empresarial - Logo" 
-                  className="relative z-10 max-w-sm w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                />
+                <img src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" alt="Juliane Teixeira Consultoria Empresarial - Logo" className="relative z-10 max-w-sm w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
           </div>
@@ -128,8 +108,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-blue-400 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
