@@ -54,6 +54,9 @@ const Footer = () => {
               label: "Serviços",
               id: "servicos"
             }, {
+              label: "Equipe",
+              id: "equipe"
+            }, {
               label: "Depoimentos",
               id: "depoimentos"
             }, {
