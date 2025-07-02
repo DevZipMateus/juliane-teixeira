@@ -17,17 +17,26 @@ const Index = () => {
     <>
       <Helmet>
         <title>Juliane Teixeira - Consultoria Empresarial | Clareza e Soluções para Empresários</title>
-        <meta name="description" content="Juliane Teixeira Consultoria Empresarial oferece clareza e soluções práticas para o dia a dia dos empresários. Conhecimento técnico e experiência prática para resultados reais." />
-        <meta name="keywords" content="consultoria empresarial, soluções empresariais, gestão empresarial, tomada de decisão, crescimento sustentável" />
-        <meta property="og:title" content="Juliane Teixeira - Consultoria Empresarial" />
-        <meta property="og:description" content="Clareza e soluções para o dia a dia dos empresários. Conhecimento técnico e experiência prática." />
+        <meta name="description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Oferecemos serviços contábeis, fiscais, departamento pessoal e consultoria tributária com foco em resultados reais e sustentáveis." />
+        <meta name="keywords" content="consultoria empresarial, soluções empresariais, gestão empresarial, tomada de decisão, crescimento sustentável, contabilidade, serviços fiscais, departamento pessoal, consultoria tributária" />
+        <meta name="author" content="Juliane Teixeira" />
+        <meta name="robots" content="index, follow" />
+        
+        <meta property="og:title" content="Juliane Teixeira - Consultoria Empresarial | Clareza e Soluções para Empresários" />
+        <meta property="og:description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Serviços contábeis, fiscais e consultoria tributária com foco em resultados reais." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://julianeteixeira.com.br" />
-        <meta property="og:image" content="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
+        <meta property="og:image" content="https://julianeteixeira.com.br/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Juliane Teixeira Consultoria Empresarial - Logo" />
+        
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Juliane Teixeira - Consultoria Empresarial" />
-        <meta name="twitter:description" content="Clareza e soluções para o dia a dia dos empresários" />
-        <meta name="twitter:image" content="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
+        <meta name="twitter:title" content="Juliane Teixeira - Consultoria Empresarial | Clareza e Soluções para Empresários" />
+        <meta name="twitter:description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Serviços contábeis, fiscais e consultoria tributária." />
+        <meta name="twitter:image" content="https://julianeteixeira.com.br/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
+        <meta name="twitter:image:alt" content="Juliane Teixeira Consultoria Empresarial - Logo" />
+        
         <link rel="canonical" href="https://julianeteixeira.com.br" />
       </Helmet>
       <div className="min-h-screen w-full overflow-x-hidden">
