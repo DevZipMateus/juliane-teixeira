@@ -66,9 +66,9 @@ const Header = () => {
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
             <img 
-              src="/lovable-uploads/007e2875-abbc-4b4b-846c-ae23f71a8657.png" 
+              src={isScrolled ? "/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" : "/lovable-uploads/007e2875-abbc-4b4b-846c-ae23f71a8657.png"}
               alt="Juliane Teixeira Consultoria" 
-              className="h-12 w-auto"
+              className="h-12 w-auto transition-opacity duration-300"
             />
             <div className="hidden sm:block">
               <h1 className={`text-xl font-bold font-display ${
