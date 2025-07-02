@@ -24,6 +24,13 @@ const testimonials = [
     content: "Recomendo fortemente! A experiência prática da consultoria nos ajudou a tomar decisões mais assertivas e acelerar nosso crescimento.",
     rating: 5,
     delay: 400
+  },
+  {
+    name: "Cliente JTC",
+    position: "Empresário",
+    content: "Gosto muito do trabalho que foi desenvolvido através da consultoria, tanto no diagnóstico quanto na consultoria mensal... Juliane é muito observadora, em alguns momentos ela visualiza demandas sem sequer termos comentado a respeito com ela. O que na minha opinião é um grande diferencial. Diferencial esse que nunca havia encontrado em outro consultor (dos vários consultores que já nos atenderam).",
+    rating: 5,
+    delay: 600
   }
 ];
 
