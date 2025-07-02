@@ -1,5 +1,4 @@
-
-import { MapPin, Clock, Phone } from 'lucide-react';
+import { MapPin, Clock, Phone, Instagram, Facebook } from 'lucide-react';
 
 const LocationSection = () => {
   return (
@@ -65,9 +64,7 @@ const LocationSection = () => {
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.624 5.367 11.99 11.988 11.99s11.99-5.366 11.99-11.99C24.007 5.367 18.641.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.317C4.198 14.745 3.732 13.6 3.732 12.267s.466-2.478 1.394-3.404c.875-.827 2.026-1.317 3.323-1.317s2.448.49 3.323 1.317c.928.926 1.394 2.067 1.394 3.404s-.466 2.478-1.394 3.404c-.875.827-2.026 1.317-3.323 1.317zm7.718-1.317c-.875.827-2.026 1.317-3.323 1.317s-2.448-.49-3.323-1.317c-.928-.926-1.394-2.067-1.394-3.404s.466-2.478 1.394-3.404c.875-.827 2.026-1.317 3.323-1.317s2.448.49 3.323 1.317c.928.926 1.394 2.067 1.394 3.404s-.466 2.478-1.394 3.404z"/>
-                    </svg>
+                    <Instagram className="w-5 h-5" />
                   </a>
                   <a 
                     href="https://www.facebook.com/profile.php?id=61563785207254" 
@@ -75,9 +72,7 @@ const LocationSection = () => {
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                   >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
+                    <Facebook className="w-5 h-5" />
                   </a>
                 </div>
               </div>
