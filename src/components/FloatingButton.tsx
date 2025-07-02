@@ -31,7 +31,7 @@ const FloatingButton = () => {
               <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-3">
                 <Phone className="w-5 h-5 text-white" />
               </div>
-              <div>
+              <div className="text-left">
                 <div className="font-medium">WhatsApp</div>
                 <div className="text-sm text-gray-500">Fale conosco agora</div>
               </div>
@@ -44,7 +44,7 @@ const FloatingButton = () => {
               <div className="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center mr-3">
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
-              <div>
+              <div className="text-left">
                 <div className="font-medium">Formulário</div>
                 <div className="text-sm text-gray-500">Envie uma mensagem</div>
               </div>
