@@ -6,28 +6,28 @@ import { Card, CardContent } from '@/components/ui/card';
 const testimonials = [
   {
     name: "Maria Silva",
-    position: "CEO, Empresa ABC",
+    position: "Diretora Executiva, Tech Solutions",
     content: "A consultoria da Juliane foi fundamental para reestruturar nossa empresa. A clareza nas orientações e o foco em resultados práticos fizeram toda a diferença.",
     rating: 5,
     delay: 0
   },
   {
     name: "João Santos",
-    position: "Diretor, Indústria XYZ",
+    position: "CEO, Industrial Brasileira",
     content: "Profissionalismo exemplar e conhecimento técnico de alto nível. As soluções apresentadas trouxeram resultados imediatos para nosso negócio.",
     rating: 5,
     delay: 200
   },
   {
     name: "Ana Costa",
-    position: "Sócia, StartUp Tech",
+    position: "Fundadora, Digital Ventures",
     content: "Recomendo fortemente! A experiência prática da consultoria nos ajudou a tomar decisões mais assertivas e acelerar nosso crescimento.",
     rating: 5,
     delay: 400
   },
   {
     name: "Cliente JTC",
-    position: "Empresário",
+    position: "Proprietário, Comércio Local",
     content: "Gosto muito do trabalho que foi desenvolvido através da consultoria, tanto no diagnóstico quanto na consultoria mensal... Juliane é muito observadora, em alguns momentos ela visualiza demandas sem sequer termos comentado a respeito com ela. O que na minha opinião é um grande diferencial. Diferencial esse que nunca havia encontrado em outro consultor (dos vários consultores que já nos atenderam).",
     rating: 5,
     delay: 600
