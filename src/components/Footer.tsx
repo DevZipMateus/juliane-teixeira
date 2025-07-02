@@ -98,7 +98,7 @@ const Footer = () => {
             <div className="mt-6 p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg">
               <h4 className="font-bold mb-2 font-display">Horário de Atendimento</h4>
               <p className="text-blue-100 text-sm">Segunda a Sexta: 08:00 às 18:00</p>
-              <p className="text-blue-100 text-sm">Sábados: 09:00 às 12:00</p>
+              
             </div>
           </div>
         </div>
