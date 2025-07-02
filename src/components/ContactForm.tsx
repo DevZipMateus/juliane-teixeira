@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -181,9 +182,9 @@ const ContactForm = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2 font-display">Telefone & WhatsApp</h4>
-                      <p className="text-gray-600 mb-2">+55 54 9640-3759</p>
+                      <p className="text-gray-600 mb-2">+55 54 99640-3759</p>
                       <a 
-                        href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
+                        href="https://wa.me/5554996403759?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-blue-600 hover:text-blue-700 font-medium"

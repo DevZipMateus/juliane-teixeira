@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { MessageCircle, X, Phone } from 'lucide-react';
 
@@ -22,7 +23,7 @@ const FloatingButton = () => {
         <div className="bg-white rounded-xl shadow-xl p-4 mb-4 animate-fadeIn border border-gray-100">
           <div className="flex flex-col space-y-3 min-w-[200px]">
             <a 
-              href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
+              href="https://wa.me/5554996403759?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center text-gray-700 hover:text-brand-primary transition-colors p-2 rounded-lg hover:bg-brand-primary/5"

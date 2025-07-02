@@ -1,3 +1,4 @@
+
 import { MapPin, Clock, Phone } from 'lucide-react';
 
 const LocationSection = () => {
@@ -28,7 +29,7 @@ const LocationSection = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Telefone</h4>
-                    <p className="text-gray-600">+55 54 9640-3759</p>
+                    <p className="text-gray-600">+55 54 99640-3759</p>
                     <p className="text-sm text-blue-600 mt-1">WhatsApp disponível</p>
                   </div>
                 </div>
@@ -91,7 +92,7 @@ const LocationSection = () => {
               
               <div className="space-y-4">
                 <a 
-                  href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
+                  href="https://wa.me/5554996403759?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full bg-white text-blue-600 py-3 px-6 rounded-full font-medium hover:bg-blue-50 transition-colors flex items-center justify-center"
