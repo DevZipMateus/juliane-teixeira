@@ -20,7 +20,18 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/lovable-uploads/fc3096a6-10df-4a7d-829f-13d96fbeb050.png)',
+        }}
+      >
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-blue-900/80"></div>
+      </div>
+
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-brand-primary/20 rounded-full opacity-20 animate-pulse"></div>
@@ -34,17 +45,17 @@ const HeroSection = () => {
             {/* Content Column */}
             <div className="text-center lg:text-left">
               <div className={`opacity-0 ${isVisible ? 'animate-fadeIn' : ''}`}>
-                <span className="inline-block py-2 px-4 rounded-full text-sm font-medium bg-brand-primary/10 text-brand-primary mb-6">
+                <span className="inline-block py-2 px-4 rounded-full text-sm font-medium bg-white/20 text-white backdrop-blur-sm mb-6">
                   Consultoria Empresarial Especializada
                 </span>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight font-display">
-                  <span className="text-brand-primary">Clareza</span> e{' '}
-                  <span className="text-brand-primary">soluções</span> para o dia a dia dos{' '}
-                  <span className="text-brand-primary">empresários</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-display">
+                  <span className="text-blue-300">Clareza</span> e{' '}
+                  <span className="text-blue-300">soluções</span> para o dia a dia dos{' '}
+                  <span className="text-blue-300">empresários</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-2xl">
                   Unimos conhecimento técnico e experiência prática para entregar resultados reais. 
                   Nossa atuação é marcada por comprometimento, qualidade e foco em resultados.
                 </p>
@@ -55,8 +66,8 @@ const HeroSection = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   
-                  <a href="https://wa.me/5554964037590?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" size="lg" className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-8 py-4 text-lg rounded-full transition-all hover:scale-105 bg-white">
+                  <a href="https://wa.me/5554996403759?text=Olá,%20gostaria%20de%20conhecer%20mais%20sobre%20a%20consultoria" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg rounded-full transition-all hover:scale-105 bg-white/10 backdrop-blur-sm">
                       WhatsApp
                     </Button>
                   </a>
@@ -65,32 +76,32 @@ const HeroSection = () => {
 
               {/* Mission, Vision, Values */}
               <div className={`grid md:grid-cols-3 gap-6 opacity-0 ${isVisible ? 'animate-fadeIn delay-500' : ''}`}>
-                <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-brand-primary/10">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Target className="h-6 w-6 text-brand-primary" />
+                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl shadow-sm border border-white/20">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Target className="h-6 w-6 text-blue-300" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2 font-display">Missão</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-bold text-white mb-2 font-display">Missão</h3>
+                  <p className="text-sm text-blue-100">
                     Contribuir para a tomada de decisão oferecendo clareza e soluções práticas
                   </p>
                 </div>
                 
-                <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-brand-primary/10">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Eye className="h-6 w-6 text-brand-primary" />
+                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl shadow-sm border border-white/20">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Eye className="h-6 w-6 text-blue-300" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2 font-display">Visão</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-bold text-white mb-2 font-display">Visão</h3>
+                  <p className="text-sm text-blue-100">
                     Ser referência em Consultoria Empresarial promovendo crescimento sustentável
                   </p>
                 </div>
                 
-                <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-brand-primary/10">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Lightbulb className="h-6 w-6 text-brand-primary" />
+                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl shadow-sm border border-white/20">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Lightbulb className="h-6 w-6 text-blue-300" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2 font-display">Valores</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-bold text-white mb-2 font-display">Valores</h3>
+                  <p className="text-sm text-blue-100">
                     Comprometimento, qualidade e foco em resultados práticos
                   </p>
                 </div>
@@ -110,8 +121,8 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-brand-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-brand-primary rounded-full mt-2 animate-bounce"></div>
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
     </section>
