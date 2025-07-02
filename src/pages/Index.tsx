@@ -1,3 +1,4 @@
+
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
@@ -8,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
 import TeamSection from "@/components/TeamSection";
+import EgestorERP from "@/components/EgestorERP";
 import { Helmet } from "react-helmet";
 
 const Index = () => {
@@ -39,6 +41,9 @@ const Index = () => {
           </section>
           <section id="servicos" className="w-full">
             <ServicesSection />
+          </section>
+          <section id="egestor" className="w-full">
+            <EgestorERP />
           </section>
           <section id="equipe" className="w-full">
             <TeamSection />
