@@ -1,4 +1,3 @@
-
 import { Mail, Phone, Instagram, Facebook } from 'lucide-react';
 const Footer = () => {
   const scrollToTop = () => {
@@ -21,7 +20,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <img alt="Juliane Teixeira Consultoria" src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" className="h-24 w-auto" />
+              <img alt="Juliane Teixeira Consultoria" className="h-24 w-auto" src="/lovable-uploads/007e2875-abbc-4b4b-846c-ae23f71a8657.png" />
               <div>
                 
                 
