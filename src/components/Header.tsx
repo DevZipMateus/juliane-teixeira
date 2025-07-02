@@ -66,7 +66,7 @@ const Header = () => {
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
             <img 
-              src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" 
+              src="/lovable-uploads/007e2875-abbc-4b4b-846c-ae23f71a8657.png" 
               alt="Juliane Teixeira Consultoria" 
               className="h-12 w-auto"
             />

@@ -112,7 +112,7 @@ const HeroSection = () => {
             <div className={`flex justify-center lg:justify-end opacity-0 ${isVisible ? 'animate-fadeIn delay-300' : ''}`}>
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-brand-primary/40 to-brand-primary/60 rounded-full opacity-20 blur-2xl"></div>
-                <img src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" alt="Juliane Teixeira Consultoria Empresarial - Logo" className="relative z-10 max-w-sm w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                <img src="/lovable-uploads/007e2875-abbc-4b4b-846c-ae23f71a8657.png" alt="Juliane Teixeira Consultoria Empresarial - Logo" className="relative z-10 max-w-sm w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
           </div>
