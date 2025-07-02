@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { TrendingUp, Target, Users, BarChart3, Lightbulb, Settings, DollarSign, UserCheck, FileText, GraduationCap, Briefcase, Monitor } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -6,46 +5,40 @@ import { Button } from '@/components/ui/button';
 
 const services = [
   {
-    title: "Planejamento Estratégico",
-    description: "Desenvolvimento de estratégias empresariais focadas em crescimento sustentável e tomada de decisões assertivas.",
-    icon: Target,
-    delay: 0
-  },
-  {
     title: "Gestão Financeira",
     description: "Análise de custos e despesas com foco no DRE Gerencial, gestão de fluxo de caixa, análise de rentabilidade e planejamento financeiro.",
     icon: DollarSign,
-    delay: 100
+    delay: 0
   },
   {
     title: "Gestão de Pessoas",
     description: "Elaboração de descrição de cargos, rotinas e criação de manual de conduta e cultura organizacional.",
     icon: UserCheck,
-    delay: 200
+    delay: 100
   },
   {
     title: "Desenvolvimento de Políticas Empresariais",
     description: "Política de vendas, políticas operacionais e manuais de procedimentos para uniformizar as atividades do dia a dia.",
     icon: FileText,
-    delay: 300
+    delay: 200
   },
   {
     title: "Treinamentos Administrativos Financeiros",
     description: "Capacitação para equipes administrativas financeiras com foco em controle financeiro e análise de resultados.",
     icon: GraduationCap,
-    delay: 400
+    delay: 300
   },
   {
     title: "BPO (Terceirização de Processos)",
     description: "Gestão financeira terceirizada e BPO administrativo com foco em eficiência e organização das rotinas.",
     icon: Briefcase,
-    delay: 500
+    delay: 400
   },
   {
     title: "Soluções em Sistemas de Gestão",
     description: "Comercialização e implementação de sistema de gestão integrado para controle financeiro, vendas e estoque.",
     icon: Monitor,
-    delay: 600
+    delay: 500
   }
 ];
 

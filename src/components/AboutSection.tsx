@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { CheckCircle, Users, Target, TrendingUp } from 'lucide-react';
+import { CheckCircle, Users, Target, TrendingUp, Clock } from 'lucide-react';
 
 const advantages = [
   "Conhecimento técnico especializado",
@@ -12,7 +12,7 @@ const advantages = [
 ];
 
 const stats = [
-  { icon: Users, number: "100%", label: "Comprometimento" },
+  { icon: Clock, number: "15+", label: "Anos de Experiência" },
   { icon: Target, number: "Foco", label: "Em Resultados" },
   { icon: TrendingUp, number: "Crescimento", label: "Sustentável" }
 ];
