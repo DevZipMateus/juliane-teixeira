@@ -20,7 +20,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <img alt="Juliane Teixeira Consultoria" className="h-12 w-auto" src="/lovable-uploads/2392007a-1872-4ac0-9b17-6a9feefbb118.png" />
+              <img alt="Juliane Teixeira Consultoria" src="/lovable-uploads/2392007a-1872-4ac0-9b17-6a9feefbb118.png" className="h-24 w-auto" />
               <div>
                 <h3 className="text-xl font-bold text-white font-display">Juliane Teixeira</h3>
                 <p className="text-blue-300 text-sm">Consultoria Empresarial</p>
