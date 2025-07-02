@@ -1,3 +1,4 @@
+
 import { Mail, Phone, Instagram, Facebook } from 'lucide-react';
 const Footer = () => {
   const scrollToTop = () => {
@@ -20,7 +21,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-              <img alt="Juliane Teixeira Consultoria" src="/lovable-uploads/2392007a-1872-4ac0-9b17-6a9feefbb118.png" className="h-24 w-auto" />
+              <img alt="Juliane Teixeira Consultoria" src="/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" className="h-24 w-auto" />
               <div>
                 
                 
@@ -81,7 +82,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <Phone className="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-gray-300">+55 54 9640-3759</p>
+                  <p className="text-gray-300">+55 54 9 9640-3759</p>
                   <p className="text-sm text-blue-300">WhatsApp disponível</p>
                 </div>
               </li>
@@ -98,7 +99,6 @@ const Footer = () => {
             <div className="mt-6 p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg">
               <h4 className="font-bold mb-2 font-display">Horário de Atendimento</h4>
               <p className="text-blue-100 text-sm">Segunda a Sexta: 08:00 às 18:00</p>
-              
             </div>
           </div>
         </div>
