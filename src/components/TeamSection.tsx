@@ -1,22 +1,21 @@
 
-import { Mail, Linkedin } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const teamMembers = [
   {
     name: "Juliane Teixeira",
     position: "Consultora Empresarial",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=922&q=80",
+    image: "/lovable-uploads/6f75d312-6704-4b0d-91a0-f595add35527.png",
     email: "contato@julianeteixeira.com.br",
-    linkedin: "https://linkedin.com",
+    instagram: "https://www.instagram.com/julianeteixeiraconsultoria/",
     delay: 0
   },
   {
     name: "Bianka Fank",
     position: "Secretária Executiva",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=776&q=80",
+    image: "/lovable-uploads/344e5df2-ad0b-4104-b385-fe1cf739313a.png",
     email: "bianka@julianeteixeira.com.br",
-    linkedin: "https://linkedin.com",
     delay: 200
   }
 ];
@@ -52,24 +51,20 @@ const TeamSection = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
-                    <div className="flex gap-3 p-4 mb-2">
-                      <a 
-                        href={`mailto:${member.email}`} 
-                        className="bg-white rounded-full w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-colors"
-                      >
-                        <Mail className="w-4 h-4" />
-                      </a>
-                      <a 
-                        href={member.linkedin} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="bg-white rounded-full w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-colors"
-                      >
-                        <Linkedin className="w-4 h-4" />
-                      </a>
+                  {member.instagram && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
+                      <div className="flex gap-3 p-4 mb-2">
+                        <a 
+                          href={member.instagram} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="bg-white rounded-full w-8 h-8 flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-colors"
+                        >
+                          <Instagram className="w-4 h-4" />
+                        </a>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
                 <div className="text-center bg-white p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
