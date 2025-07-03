@@ -17,13 +17,13 @@ const Index = () => {
     <>
       <Helmet>
         <title>Juliane Teixeira - Consultoria Empresarial | Clareza e Soluções para Empresários</title>
-        <meta name="description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Oferecemos serviços contábeis, fiscais, departamento pessoal e consultoria tributária com foco em resultados reais e sustentáveis." />
-        <meta name="keywords" content="consultoria empresarial, soluções empresariais, gestão empresarial, tomada de decisão, crescimento sustentável, contabilidade, serviços fiscais, departamento pessoal, consultoria tributária" />
+        <meta name="description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Oferecemos gestão financeira, desenvolvimento de políticas empresariais, treinamentos e consultoria estratégica com foco em resultados reais e sustentáveis." />
+        <meta name="keywords" content="consultoria empresarial, soluções empresariais, gestão empresarial, tomada de decisão, crescimento sustentável, gestão financeira, desenvolvimento de políticas, treinamentos empresariais, consultoria estratégica" />
         <meta name="author" content="Juliane Teixeira" />
         <meta name="robots" content="index, follow" />
         
         <meta property="og:title" content="Juliane Teixeira - Consultoria Empresarial | Clareza e Soluções para Empresários" />
-        <meta property="og:description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Serviços contábeis, fiscais e consultoria tributária com foco em resultados reais." />
+        <meta property="og:description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Gestão financeira, desenvolvimento de políticas empresariais e consultoria estratégica com foco em resultados reais." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://julianeteixeira.com.br" />
         <meta property="og:image" content="https://julianeteixeira.com.br/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
@@ -33,7 +33,7 @@ const Index = () => {
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Juliane Teixeira - Consultoria Empresarial | Clareza e Soluções para Empresários" />
-        <meta name="twitter:description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Serviços contábeis, fiscais e consultoria tributária." />
+        <meta name="twitter:description" content="Consultoria empresarial especializada em soluções práticas para o crescimento do seu negócio. Gestão financeira, desenvolvimento de políticas e consultoria estratégica." />
         <meta name="twitter:image" content="https://julianeteixeira.com.br/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
         <meta name="twitter:image:alt" content="Juliane Teixeira Consultoria Empresarial - Logo" />
         

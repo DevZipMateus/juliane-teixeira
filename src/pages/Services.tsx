@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
@@ -199,19 +200,19 @@ const Services = () => {
     <>
       <Helmet>
         <title>Serviços - Juliane Teixeira Consultoria Empresarial</title>
-        <meta name="description" content="Conheça nossos serviços de consultoria empresarial: contabilidade completa, serviços fiscais, abertura de empresas, departamento pessoal e consultoria tributária. Soluções personalizadas para o seu negócio." />
-        <meta name="keywords" content="serviços contábeis, consultoria fiscal, abertura de empresa, departamento pessoal, consultoria tributária, gestão financeira, contabilidade consultiva" />
+        <meta name="description" content="Conheça nossos serviços de consultoria empresarial: gestão financeira, desenvolvimento de políticas empresariais, treinamentos administrativos, BPO e soluções em sistemas de gestão. Soluções personalizadas para o seu negócio." />
+        <meta name="keywords" content="consultoria empresarial, gestão financeira, desenvolvimento de políticas, treinamentos empresariais, BPO, sistemas de gestão, consultoria estratégica" />
         <meta name="robots" content="index, follow" />
         
         <meta property="og:title" content="Serviços - Juliane Teixeira Consultoria Empresarial" />
-        <meta property="og:description" content="Oferecemos serviços contábeis completos: contabilidade, fiscal, abertura de empresas, departamento pessoal e consultoria tributária. Soluções personalizadas para o crescimento do seu negócio." />
+        <meta property="og:description" content="Oferecemos consultoria empresarial completa: gestão financeira, desenvolvimento de políticas, treinamentos e BPO. Soluções personalizadas para o crescimento do seu negócio." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://julianeteixeira.com.br/services" />
         <meta property="og:image" content="https://julianeteixeira.com.br/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Serviços - Juliane Teixeira Consultoria Empresarial" />
-        <meta name="twitter:description" content="Serviços contábeis completos e consultoria empresarial personalizada para o crescimento do seu negócio." />
+        <meta name="twitter:description" content="Consultoria empresarial completa e soluções personalizadas para o crescimento do seu negócio." />
         <meta name="twitter:image" content="https://julianeteixeira.com.br/lovable-uploads/598581a5-235d-45d1-88d0-5cc9a9ae9f78.png" />
         
         <link rel="canonical" href="https://julianeteixeira.com.br/services" />

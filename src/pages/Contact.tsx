@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
@@ -47,7 +48,7 @@ const Contact = () => {
                   Entre em <span className="text-gradient">contato</span> conosco
                 </h1>
                 <p className={`text-sm md:text-lg text-gray-600 mx-auto mb-2 md:mb-3 opacity-0 ${isVisible ? 'animate-slideDown delay-200' : ''}`}>
-                  Estamos prontos para atender suas necessidades contábeis. Entre em contato por telefone, 
+                  Estamos prontos para atender suas necessidades empresariais. Entre em contato por telefone, 
                   e-mail ou WhatsApp para uma consultoria personalizada.
                 </p>
               </div>
