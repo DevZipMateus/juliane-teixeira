@@ -30,12 +30,36 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simular envio do formulário
+    // Preparar mensagem para WhatsApp
+    let whatsappMessage = `*Nova mensagem do site:*\n\n`;
+    whatsappMessage += `*Nome:* ${formData.name}\n`;
+    whatsappMessage += `*E-mail:* ${formData.email}\n`;
+    
+    if (formData.phone) {
+      whatsappMessage += `*Telefone:* ${formData.phone}\n`;
+    }
+    
+    if (formData.company) {
+      whatsappMessage += `*Empresa:* ${formData.company}\n`;
+    }
+    
+    whatsappMessage += `\n*Mensagem:*\n${formData.message}`;
+
+    // Codificar mensagem para URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/5554996403759?text=${encodedMessage}`;
+
+    // Simular loading por um momento
     setTimeout(() => {
+      // Abrir WhatsApp
+      window.open(whatsappUrl, '_blank');
+      
       toast({
-        title: "Mensagem enviada com sucesso!",
-        description: "Entraremos em contato em breve. Obrigado!",
+        title: "Redirecionando para WhatsApp",
+        description: "Você será redirecionado para o WhatsApp com sua mensagem preenchida.",
       });
+      
+      // Limpar formulário
       setFormData({
         name: '',
         email: '',
@@ -43,8 +67,9 @@ const ContactForm = () => {
         company: '',
         message: ''
       });
+      
       setIsSubmitting(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -159,12 +184,12 @@ const ContactForm = () => {
                     {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                        Enviando...
+                        Preparando...
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4 mr-2" />
-                        Enviar Mensagem
+                        Enviar via WhatsApp
                       </>
                     )}
                   </Button>
