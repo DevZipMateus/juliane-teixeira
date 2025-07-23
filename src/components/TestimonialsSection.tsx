@@ -1,12 +1,11 @@
-
 import { useEffect, useRef } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const testimonials = [
   {
-    name: "Maria Silva",
-    position: "Diretora Executiva, Tech Solutions",
+    name: "Cleciane Rosato - Memorial Vera Cruz",
+    position: "Diretora Executiva, Tech Solutions", 
     content: "A consultoria da Juliane foi fundamental para reestruturar nossa empresa. A clareza nas orientações e o foco em resultados práticos fizeram toda a diferença.",
     rating: 5,
     delay: 0
