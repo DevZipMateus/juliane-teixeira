@@ -18,8 +18,8 @@ const testimonials = [
     delay: 200
   },
   {
-    name: "Cleciane Rosato",
-    position: "Proprietária, Memorial Vera Cruz",
+    name: "Juliane Teixeira",
+    position: "Memorial Vera Cruz",
     content: "Gosto muito do trabalho que foi desenvolvido através da consultoria, tanto no diagnóstico quanto na consultoria mensal... Juliane é muito observadora, em alguns momentos ela visualiza demandas sem sequer termos comentado a respeito com ela. O que na minha opinião é um grande diferencial. Diferencial esse que nunca havia encontrado em outro consultor (dos vários consultores que já nos atenderam).",
     rating: 5,
     delay: 600
