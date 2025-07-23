@@ -4,29 +4,22 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const testimonials = [
   {
-    name: "Cleciane Rosato - Memorial Vera Cruz",
-    position: "Diretora Executiva, Tech Solutions", 
-    content: "A consultoria da Juliane foi fundamental para reestruturar nossa empresa. A clareza nas orientações e o foco em resultados práticos fizeram toda a diferença.",
+    name: "Maura Monteiro",
+    position: "Vivenciar Comunicação e Marketing", 
+    content: "A consultoria da Juliane vai muito além dos números: é sobre negócios, mas também sobre pessoas. Sua experiência e competência impulsionaram um novo momento na Vivenciar. Ela nos ajudou a enxergar nosso potencial, organizar e aprimorar cada processo. Seu trabalho vai ficar marcado para sempre na nossa história!",
     rating: 5,
     delay: 0
   },
   {
-    name: "João Santos",
-    position: "CEO, Industrial Brasileira",
-    content: "Profissionalismo exemplar e conhecimento técnico de alto nível. As soluções apresentadas trouxeram resultados imediatos para nosso negócio.",
+    name: "Bruna Milan",
+    position: "Desperttar",
+    content: "Sobre o sistema, tem facilitado muito minha rotina, consigo acompanhar tudo com mais clareza, especialmente estoque e faturamento da loja.A assessoria tem sido bem presente e me sinto segura com as orientações. No geral, atende minha necessidade e está fazendo muita diferença para meu negócio. Me sinto mais organizada e consigo tomar decisões com mais confiança. Grata pelo trabalho de vocês, atenção e disponibilidade! ",
     rating: 5,
     delay: 200
   },
   {
-    name: "Ana Costa",
-    position: "Fundadora, Digital Ventures",
-    content: "Recomendo fortemente! A experiência prática da consultoria nos ajudou a tomar decisões mais assertivas e acelerar nosso crescimento.",
-    rating: 5,
-    delay: 400
-  },
-  {
-    name: "Cliente JTC",
-    position: "Proprietário, Comércio Local",
+    name: "Cleciane Rosato",
+    position: "Proprietária, Memorial Vera Cruz",
     content: "Gosto muito do trabalho que foi desenvolvido através da consultoria, tanto no diagnóstico quanto na consultoria mensal... Juliane é muito observadora, em alguns momentos ela visualiza demandas sem sequer termos comentado a respeito com ela. O que na minha opinião é um grande diferencial. Diferencial esse que nunca havia encontrado em outro consultor (dos vários consultores que já nos atenderam).",
     rating: 5,
     delay: 600
